@@ -4,7 +4,7 @@
 	id		= "com.corrupt.hackforchange"
 	version 	= "1.0.0">
 
-	<name>Corrupt Phonegap</name>
+	<name>Corrupt Phonegap (Dev)</name>
 
   <description>
     Corrupt is a asshole reporting application made for hackforchange.

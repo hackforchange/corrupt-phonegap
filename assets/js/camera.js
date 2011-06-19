@@ -5,20 +5,20 @@ var corrupt = (function (corrupt) {
 
     // Wait for PhoneGap to connect with the device
     //
-    corrupt.load = function onLoad() {
+   corrupt.onLoad = function onLoad() {
         document.addEventListener("deviceready",onDeviceReady,false);
     }
 
     // PhoneGap is ready to be used!
     //
-    corrupt.ready = function onDeviceReady() {
+    corrupt.onDeviceReady = function onDeviceReady() {
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
     }
 
     // Called when a photo is successfully retrieved
     //
-    corrupt.onsuccess = function onPhotoDataSuccess(imageData) {
+    corrupt.onPhotoDataSuccess = function onPhotoDataSuccess(imageData) {
       // Uncomment to view the base64 encoded image data
       // console.log(imageData);
 
@@ -38,7 +38,7 @@ var corrupt = (function (corrupt) {
 
     // Called when a photo is successfully retrieved
     //
-    corrupt.onurisuccess = function onPhotoURISuccess(imageURI) {
+    corrupt.onPhotoURISuccess = function onPhotoURISuccess(imageURI) {
       // Uncomment to view the image file URI 
       // console.log(imageURI);
 
@@ -58,30 +58,31 @@ var corrupt = (function (corrupt) {
 
     // A button will call this function
     //
-    corrupt.capture = function capturePhoto() {
+    corrupt.capturePhoto = function capturePhoto() {
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+      navigator.camera.getPicture(corrupt.onPhotoDataSuccess, corrupt.onFail, { quality: 50 });
     }
 
     // A button will call this function
     //
-    corrupt.capedit = function capturePhotoEdit() {
+    corrupt.capturePhotoEdit = function capturePhotoEdit() {
       // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true }); 
+      navigator.camera.getPicture(corrupt.onPhotoDataSuccess, corrupt.onFail, { quality: 20, allowEdit: true }); 
     }
 
     // A button will call this function
     //
-    corrupt.getphoto = function getPhoto(source) {
+    corrupt.getPhoto = function getPhoto(source) {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+      navigator.camera.getPicture(corrupt.onPhotoURISuccess, corrupt.onFail, { quality: 50, 
         destinationType: destinationType.FILE_URI,
         sourceType: source });
     }
 
     // Called if something bad happens.
     // 
-    corrupt.fail = function onFail(mesage) {
+    corrupt.onFail = function onFail(mesage) {
       alert('Failed because: ' + message);
     }
-})();
+    return corrupt;
+})(corrupt || {});
