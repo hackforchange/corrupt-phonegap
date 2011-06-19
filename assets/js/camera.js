@@ -24,16 +24,16 @@ var corrupt = (function (corrupt) {
 
       // Get image handle
       //
-      var smallImage = document.getElementById('smallImage');
+      var smallImage = document.getElementById('image-data');
 
       // Unhide image elements
       //
-      smallImage.style.display = 'block';
+      //smallImage.style.display = 'block';
 
       // Show the captured photo
       // The inline CSS rules are used to resize the image
       //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
+      smallImage.value = "data:image/jpeg;base64," + imageData;
     }
 
     // Called when a photo is successfully retrieved
@@ -75,7 +75,7 @@ var corrupt = (function (corrupt) {
     corrupt.getPhoto = function getPhoto(source) {
       // Retrieve image file location from specified source
       navigator.camera.getPicture(corrupt.onPhotoURISuccess, corrupt.onFail, { quality: 50, 
-        destinationType: destinationType.FILE_URI,
+        destinationType: navigator.camera.DestinationType.FILE_URI,
         sourceType: source });
     }
 

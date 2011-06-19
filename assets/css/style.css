@@ -1,0 +1,64 @@
+@import "layout.css";
+
+/*
+Theme Name: jQuery Mobile
+Theme URI: http://jquerymobile.com/
+Description: The 2010 theme for WordPress is stylish, customizable, simple, and readable -- make it yours with a custom menu, header image, and background. Twenty Ten supports six widgetized areas (two in the sidebar, four in the footer) and featured images (thumbnails for gallery posts and custom header images for posts and pages). It includes stylesheets for print and the admin Visual Editor, special styles for posts in the "Asides" and "Gallery" categories, and has an optional one-column page template that removes the sidebar.
+Author: Hacked together Doug Neiner from TwentyTen
+Version: 0.1
+*/
+
+#map_container {
+  height: 350px;
+  position: relative;
+}
+
+#corruption_map_container {
+  height: 350px;
+  position: relative;
+}
+
+input#submit_corruption {
+  background-color: #0f212e;
+  padding: 15px;
+  font-size: 1.75em;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 25px;
+}
+
+textarea {
+  width: 70%;
+  height: 100px;
+}
+
+#page article {
+  margin-bottom: 25px;
+}
+
+#page article h2 {
+  font-size: 1.8em !important;
+}
+
+#page article h3 {
+  font-size: 1.2em !important;
+}
+
+.sub #page ul#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.sub #page ul#messages li{
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: .5em;
+  list-style-type: none;
+}
+
+.sub #page ul#messages li img{
+  vertical-align: middle;
+}
