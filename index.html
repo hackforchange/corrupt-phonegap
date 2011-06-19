@@ -22,7 +22,7 @@ $(document).ready(function() {
     // corrupt.onLoad(); require phonegap?
     Bribable.init({showMessages: false});
     $('#main-form').submit(function(event) {
-      $.post('http://10.0.1.131:9292/messages', $(this).serialize(), function(data, status){
+      $.post('http://corrupt.mobi/messages', $(this).serialize(), function(data, status){
         if (data.redirect) {
         alert('Got a redirect!')
         } else {
